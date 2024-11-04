@@ -5,8 +5,6 @@ import {
   LucideIcon
 } from 'lucide-react';
 
-import { LucideIcon } from 'lucide-react';
-
 interface AnimatedCounterProps {
   value: number;
   duration?: number;
