@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Linkedin, Mail, Phone, MapPin, ChevronDown, Award, 
-  Building, Users, LineChart, Code, Server, Shield, Cloud
+import {
+  Linkedin, Mail, Phone, MapPin, ChevronDown, Award,
+  Building, Users, LineChart, Code, Server, Shield, Cloud,
+  LucideIcon
 } from 'lucide-react';
 
 import { LucideIcon } from 'lucide-react';
@@ -37,8 +38,8 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 200
   const [count, setCount] = useState(0);
   
   useEffect(() => {
-    let startTime;
-    const step = (timestamp) => {
+    let startTime: number | undefined;
+    const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       setCount(Math.min(Math.floor((progress / duration) * value), value));
@@ -140,7 +141,7 @@ const Portfolio: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
